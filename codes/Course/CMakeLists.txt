@@ -1,0 +1,1 @@
+add_executable(TestCourse TestCourse.cpp Course.cpp Course.h)
