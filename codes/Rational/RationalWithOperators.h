@@ -61,7 +61,7 @@ public:
     // Define function operators for unary + and -
     Rational operator+();
 
-    Rational operator-();
+    Rational operator-() const;
 
     // Define the << and >> operators
     friend ostream &operator<<(ostream &, const Rational &);

@@ -39,43 +39,45 @@ Rational Rational::add(const Rational &secondRational) const {
     int n = numerator * secondRational.getDenominator() +
             denominator * secondRational.getNumerator();
     int d = denominator * secondRational.getDenominator();
-    return Rational(n, d);
+    return {n, d};
 }
 
 Rational Rational::subtract(const Rational &secondRational) const {
     int n = numerator * secondRational.getDenominator()
             - denominator * secondRational.getNumerator();
     int d = denominator * secondRational.getDenominator();
-    return Rational(n, d);
+    return {n, d};
 }
 
 Rational Rational::multiply(const Rational &secondRational) const {
     int n = numerator * secondRational.getNumerator();
     int d = denominator * secondRational.getDenominator();
-    return Rational(n, d);
+    return {n, d};
 }
 
 Rational Rational::divide(const Rational &secondRational) const {
     int n = numerator * secondRational.getDenominator();
     int d = denominator * secondRational.numerator;
-    return Rational(n, d);
+    return {n, d};
 }
 
 int Rational::compareTo(const Rational &secondRational) const {
     Rational temp = subtract(secondRational);
-    if (temp.getNumerator() < 0)
+    if (temp.getNumerator() < 0) {
         return -1;
-    else if (temp.getNumerator() == 0)
+    } else if (temp.getNumerator() == 0) {
         return 0;
-    else
+    } else {
         return 1;
+    }
 }
 
 bool Rational::equals(const Rational &secondRational) const {
-    if (compareTo(secondRational) == 0)
+    if (compareTo(secondRational) == 0) {
         return true;
-    else
+    } else {
         return false;
+    }
 }
 
 int Rational::intValue() const {
@@ -90,8 +92,9 @@ string Rational::toString() const {
     stringstream ss;
     ss << numerator;
 
-    if (denominator > 1)
+    if (denominator > 1) {
         ss << "/" << denominator;
+    }
 
     return ss.str();
 }
@@ -125,10 +128,11 @@ Rational &Rational::operator/=(const Rational &secondRational) {
 
 // Define function operator []
 int &Rational::operator[](int index) {
-    if (index == 0)
+    if (index == 0) {
         return numerator;
-    else
+    } else {
         return denominator;
+    }
 }
 
 // Define function operators for prefix ++ and --
@@ -160,16 +164,17 @@ Rational Rational::operator+() {
     return *this;
 }
 
-Rational Rational::operator-() {
-    return Rational(-numerator, denominator);
+Rational Rational::operator-() const {
+    return {-numerator, denominator};
 }
 
 // Define the output and input operator
 ostream &operator<<(ostream &out, const Rational &rational) {
-    if (rational.denominator == 1)
+    if (rational.denominator == 1) {
         out << rational.numerator;
-    else
+    } else {
         out << rational.numerator << "/" << rational.denominator;
+    }
     return out;
 }
 

@@ -1,0 +1,1 @@
+add_executable(TestRationalWithOperators TestRationalWithOperators.cpp RationalWithOperators.cpp RationalWithOperators.h)
