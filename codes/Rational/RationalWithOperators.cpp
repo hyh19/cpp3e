@@ -189,27 +189,27 @@ istream &operator>>(istream &in, Rational &rational) {
 
 // Define function operators for relational operators
 bool operator<(const Rational &r1, const Rational &r2) {
-    return (r1.compareTo(r2) < 0);
+    return r1.compareTo(r2) < 0;
 }
 
 bool operator<=(const Rational &r1, const Rational &r2) {
-    return (r1.compareTo(r2) <= 0);
+    return r1.compareTo(r2) <= 0;
 }
 
 bool operator>(const Rational &r1, const Rational &r2) {
-    return (r1.compareTo(r2) > 0);
+    return r1.compareTo(r2) > 0;
 }
 
 bool operator>=(const Rational &r1, const Rational &r2) {
-    return (r1.compareTo(r2) >= 0);
+    return r1.compareTo(r2) >= 0;
 }
 
 bool operator==(const Rational &r1, const Rational &r2) {
-    return (r1.compareTo(r2) == 0);
+    return r1.compareTo(r2) == 0;
 }
 
 bool operator!=(const Rational &r1, const Rational &r2) {
-    return (r1.compareTo(r2) != 0);
+    return r1.compareTo(r2) != 0;
 }
 
 // Define non-member function operators for arithmetic operators
